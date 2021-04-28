@@ -29,7 +29,7 @@ def hiretuber(request,id):
     
     send_templated_mail(
         template_name = 'welcome', 
-        from_email = 'siddhant.17504@sscbs.du.ac.in',
+        from_email = 'siddhantutube4@gmail.com',
         recipient_list = yt_email_list,
         context = {
             'message':usermessage,
