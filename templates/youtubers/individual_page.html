@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+  <main class="single-page-tubers">
+    <div class="banner">
+      <img src="{% static './assets/images/bg-banner.png' %}" alt="" class="img-fluid w-100">
+      <h1 class="text-center">
+        Tubers
+      </h1>
+    </div>
+
+
+
+    <section class="head container mt-5 mb-5">
+      <div class="row">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <h1 class="text-center">{{yt.name}}</h1>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <h1 class="text-accent text-center">
+            ${{yt.price}}
+          </h1>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <img src="{{yt.photo.url}}" class="img-fluid" alt="team-member">
+        </div>
+      </div>
+    </section>
+    <section class="video container text-center">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/{{yt.video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <section class="descritpion container">
+      <h4>Descritpion</h4>
+      <p class="mt-2 mb-2">
+        {{yt.desc | safe}}
+      </p>
+
+    </section>
+
+    <section class="container w-50">
+
+      <div class="person-description mt-2">
+        <button class="btn btn-accent"> City: {{yt.city}} </button>
+        <button class="btn btn-accent"> Age: {{yt.age}} </button>
+        <button class="btn btn-accent"> Height: {{yt.height}} </button>
+      </div>
+      <div class="person-description mt-2">
+        <button class="btn btn-accent"> Crew: {{yt.crew}} </button>
+        <button class="btn btn-accent"> Camera: {{yt.camera_type}} </button>
+        <button class="btn btn-accent"> Subs: {{yt.subs_count}} </button>
+      </div>
+
+    </section>
+
+    <section class="youtuber-form container mt-5 mb-5">
+      <div class="row">
+        <form action = "{% url 'hiretuber' tuberid %}" method = "POST" class="col-md-8 offset-md-2">
+          {% csrf_token %}
+          <h3 class="pt-2 pb-2">Fill the Form and reach out</h3>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <input name = "fname" type="text" class="form-control" placeholder="First Name">
+            </div>
+            <div class="form-group col-md-4">
+              <input name = "lname" type="text" class="form-control" placeholder="Last Name">
+            </div>
+            <div class="form-group col-md-4">
+              <input name = "email" value = "{{user.email}}" type="email" class="form-control" >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input name = "tubername" type="text" class="form-control" value = "{{yt.name}}">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <input name = "city" type="text" class="form-control" placeholder="City">
+            </div>
+            <div class="form-group col-md-4">
+              <input name = "state" type="text" class="form-control" placeholder="State">
+            </div>
+            <div class="form-group col-md-4">
+              <input name = "phone" type="text" class="form-control" placeholder="Phone Number">
+            </div>
+            <input name = "user_id" type="hidden" class="form-control" value = "{{user.id }}">
+          </div>
+
+          <div class="form-group pt-2">
+            <textarea name = "message" class="form-control" rows="3" placeholder="Details Message"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-accent">Contact Us</button>
+          </div>
+
+        </form>
+      </div>
+
+    </section>
+
+  </main>
+
+
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% block subject %}Hi, You've Got a query from {{full_name}}{% endblock %}
+{% block html %}
+  <p>Hi {{tubername}}</p>,
+
+  <p>{{full_name}} wants you to Promote their Product</p>
+      <p>Their Email is {{email}}</p>
+      <p>Their message is as follows:</p>
+      <p>{{message}}</p>
+
+    <br><br>
+    <p>Kindly Check Your profile For more info.</p>
+    
+  Thanks, you rock!
+{% endblock %}

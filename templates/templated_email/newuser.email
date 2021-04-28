@@ -1,0 +1,14 @@
+{% block subject %}Welcome to Tubers, {{full_name}} {% endblock %}
+{% block html %}
+ <h1> Hi, {{full_name}}</h1>
+
+  <p>Thanks for Signing Up on Our Website</p>
+      <p>Your Username is {{username}}</p>
+      <p>Hope you have a great Time</p>
+      
+
+    <br>
+    <p>Kindly Check Your profile For more info.</p>
+    
+  <p>Thanks, you rock!</p>
+{% endblock %}
