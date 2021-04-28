@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y4#f51*x-p5$ctej@67%)xkf2ipg^oqoe2x6rzs)-y^unuw9=z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1','https://siddhanttubers.herokuapp.com/']
 
 
 LOGIN_REDIRECT_URL = 'dashboard'
