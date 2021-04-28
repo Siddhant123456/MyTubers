@@ -163,8 +163,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'siddhant.17504@sscbs.du.ac.in'
-EMAIL_HOST_PASSWORD = 'Siddhant1#'
+EMAIL_HOST_USER = 'siddhantutube4@gmail.com'
+EMAIL_HOST_PASSWORD = 'Helloworld12#'
 
 django_heroku.settings(locals())
 
