@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import djnago_heroku
+import dj_database_url
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -61,7 +64,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
 
 ROOT_URLCONF = 'tubers.urls'
 
@@ -146,6 +151,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'tubers/static')
 ]
 SITE_ID = 1
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 TEMPLATED_EMAIL_BACKEND = 'templated_email.backends.vanilla_django'
 
@@ -156,3 +162,5 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'siddhant.17504@sscbs.du.ac.in'
 EMAIL_HOST_PASSWORD = 'Siddhant1#'
+
+django_heroku.settings(locals())
