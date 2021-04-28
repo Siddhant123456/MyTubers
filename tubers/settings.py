@@ -101,7 +101,7 @@ DATABASES = {
         'NAME': 'lcotubers',
         'USER':'postgres',
         'PASSWORD':'admin',
-        'HOST' : 'localhost',
+        'HOST' : 'siddhanttubers.herokuapp.com',
     }
 }
 
