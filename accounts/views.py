@@ -53,7 +53,7 @@ def register(request):
         
         send_templated_mail(
         template_name = 'newuser', 
-        from_email = 'siddhant.17504@sscbs.du.ac.in',
+        from_email = 'siddhantutube4@gmail.com',
         recipient_list = email_list,
         context = {
 
